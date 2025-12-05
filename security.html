@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Економічна безпека Франції</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        nav a.active {
+            background: white;
+            color: #667eea;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 42px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .summary-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .summary-section p {
+            margin-bottom: 15px;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart-container h3 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .indicator {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .indicator.positive {
+            background: #4ade80;
+            color: white;
+        }
+
+        .indicator.neutral {
+            background: #fbbf24;
+            color: white;
+        }
+
+        .indicator.negative {
+            background: #f87171;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Резюме</a>
+            <a href="economic-security.html" class="active">Економічна безпека</a>
+            <a href="threats.html">Загрози та протидія</a>
+        </nav>
+
+        <div class="content">
+            <h1>🇫🇷 Економічна безпека Франції (2013-2024)</h1>
+
+            <div class="summary-section">
+                <p><strong>Аналіз економічної безпеки Франції за період 2013-2024 років</strong> виявив змішану картину з декількома критичними викликами та стабільними сильними сторонами. Країна демонструє високі соціальні стандарти та розвинену інфраструктуру, однак стикається з серйозними фінансовими та демографічними проблемами.</p>
+
+                <p><span class="indicator negative">Критичний рівень</span> спостерігається у сфері фінансової безпеки: державний борг перевищує 112% ВВП, а рівень перерозподілу ВВП через бюджет сягає 44%, що свідчить про високе податкове навантаження. <span class="indicator negative">Абсолютно небезпечний рівень</span> демографічного навантаження (61,1) та високий рівень безробіття (8,5%) створюють додатковий тиск на економіку.</p>
+
+                <p><span class="indicator positive">Позитивні показники</span> включають оптимальну очікувану тривалість життя (82,7 роки), низьку дитячу смертність (3,77 на 1000), високу частку відновлювальних джерел енергії (12,3%) та активне користування інтернетом (83,5%). Виробництво зерна залишається на оптимальному рівні (1 тонна на особу), що забезпечує продовольчу безпеку.</p>
+
+                <p><span class="indicator neutral">Незадовільний стан</span> імпортної залежності (46,8%) та негативна динаміка покриття експортом імпорту (0,967 разів) вказують на структурні дисбаланси в зовнішній торгівлі. Інвестаційна безпека перебуває в <span class="indicator negative">абсолютній небезпеці</span> через низький приплив прямих іноземних інвестицій (1,99% ВВП).</p>
+
+                <p><strong>Висновок:</strong> Франція потребує структурних реформ для зменшення державного боргу, стимулювання інвестицій та вирішення демографічних проблем при збереженні високих соціальних стандартів.</p>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>📈 Державний борг (% ВВП)</h3>
+                    <canvas id="debtChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>📊 Рівень безробіття (%)</h3>
+                    <canvas id="unemploymentChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>💰 Інфляція (%)</h3>
+                    <canvas id="inflationChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>👥 Демографічне навантаження</h3>
+                    <canvas id="demographicChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>⚡ Частка відновлювальних джерел енергії (%)</h3>
+                    <canvas id="renewableChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>📦 Покриття експортом імпорту (рази)</h3>
+                    <canvas id="exportImportChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chartConfig = {
+            type: 'line',
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        };
+
+        // Державний борг
+        new Chart(document.getElementById('debtChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2023'],
+                datasets: [{
+                    label: 'Державний борг (% ВВП)',
+                    data: [104.9, 106.0, 106.6, 107.2, 111.3, 139.0, 132.5, 109.2, 107.3],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+
+        // Безробіття
+        new Chart(document.getElementById('unemploymentChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Рівень безробіття (%)',
+                    data: [10.4, 10.1, 9.4, 9.0, 8.4, 8.0, 7.9, 7.3, 7.3, 7.4],
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+
+        // Інфляція
+        new Chart(document.getElementById('inflationChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Інфляція (%)',
+                    data: [0.04, 0.18, 1.03, 1.85, 1.11, 0.48, 1.64, 5.22, 4.88, 2.00],
+                    borderColor: '#8b5cf6',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+
+        // Демографічне навантаження
+        new Chart(document.getElementById('demographicChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Демографічне навантаження',
+                    data: [58.7, 59.5, 60.2, 60.8, 61.3, 61.9, 62.1, 62.1, 62.2, 62.3],
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+
+        // Відновлювальні джерела
+        new Chart(document.getElementById('renewableChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021'],
+                datasets: [{
+                    label: 'Частка відновлювальних джерел (%)',
+                    data: [12.3, 12.3, 12.3, 12.3, 12.3, 12.3, 12.3, 12.3, 12.3, 12.3],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+
+        // Покриття експортом імпорту
+        new Chart(document.getElementById('exportImportChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Покриття експортом імпорту (рази)',
+                    data: [0.996, 0.989, 0.977, 0.971, 0.981, 0.943, 0.963, 0.929, 0.945, 0.978],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

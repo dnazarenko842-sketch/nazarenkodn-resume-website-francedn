@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дар'я Назаренко - Резюме</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        nav a.active {
+            background: white;
+            color: #667eea;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .header-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            color: #667eea;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .header-info p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+        }
+
+        .contact-item::before {
+            content: "📧";
+            font-size: 20px;
+        }
+
+        .contact-item.phone::before {
+            content: "📱";
+        }
+
+        .contact-item.location::before {
+            content: "📍";
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #764ba2;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .experience-item, .education-item, .volunteer-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .experience-item h3, .education-item h3, .volunteer-item h3 {
+            color: #667eea;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .date-location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: #f5f7fa;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+        }
+
+        .language-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .hobbies p {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="active">Резюме</a>
+            <a href="economic-security.html">Економічна безпека</a>
+            <a href="threats.html">Загрози та протидія</a>
+        </nav>
+
+        <div class="content">
+            <div class="header-section">
+                <div class="photo-container">
+                    <img src="photo.jpg" alt="Дар'я Назаренко">
+                </div>
+                <div class="header-info">
+                    <h1>Дар'я Назаренко</h1>
+                    <p><strong>Персональний тренер та нутриціолог</strong></p>
+                    <p>Дата народження: 03.09.2007 | Національність: Українка</p>
+                    <div class="contact-info">
+                        <div class="contact-item">dnazarenko842@gmail.com</div>
+                        <div class="contact-item phone">+380 956 987 734</div>
+                        <div class="contact-item location">Вул. Милютенка 6, Київ, Україна</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Досвід роботи</h2>
+                <div class="experience-item">
+                    <h3>TopHalls Fitness Studio</h3>
+                    <div class="date-location">📅 Січень 2025 – Серпень 2025 | 📍 Ковель, Україна</div>
+                    <p><strong>Персональний тренер та нутриціолог</strong></p>
+                    <p>Розробка індивідуальних тренувальних програм, консультації з харчування, коригування вправ для безпеки клієнтів, оцінка фізичного стану та визначення цілей клієнтів.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Освіта</h2>
+                <div class="education-item">
+                    <h3>Краматорська Загальноосвітня Школа № 25</h3>
+                    <div class="date-location">📅 Вересень 2014 – Травень 2025 | 📍 Краматорськ, Україна</div>
+                    <p><strong>Повна загальна середня освіта</strong></p>
+                    <p>Напрямок: Природничі науки, математика та статистика</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Професійні навички</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Коригування травмонебезпечних рухів</div>
+                    <div class="skill-item">Розробка програм вправ</div>
+                    <div class="skill-item">Консультування з фітнесу</div>
+                    <div class="skill-item">Оцінка фізичного стану</div>
+                    <div class="skill-item">Визначення цілей клієнтів</div>
+                    <div class="skill-item">Інтеграція принципів тренувань</div>
+                    <div class="skill-item">Комунікація з молоддю</div>
+                    <div class="skill-item">Анатомія людини</div>
+                    <div class="skill-item">Забезпечення безпеки тренувань</div>
+                    <div class="skill-item">Харчування здорових осіб</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Мовні навички</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <strong>Рідні мови:</strong>
+                        Українська, Російська
+                    </div>
+                    <div class="language-item">
+                        <strong>Англійська:</strong>
+                        Читання B2, Аудіювання B2, Письмо B1, Говоріння B1
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Волонтерська діяльність</h2>
+                <div class="volunteer-item">
+                    <h3>Дитяча гімнастика у Ковелі</h3>
+                    <div class="date-location">📅 Травень 2025 – Серпень 2025</div>
+                    <p>Організація занять з дитячої гімнастики. Гімнастика – це не просто спорт, а шлях до гармонійного розвитку. Вправи допомагають зміцнити м'язи, сформувати правильну поставу та покращити гнучкість. Кожне заняття виховує впевненість у кожному русі та підвищує координацію. Діти вчаться відчувати баланс, контролювати своє тіло та відкривати нові здібності.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Хобі та інтереси</h2>
+                <div class="hobbies">
+                    <p><strong>💃 Танці</strong><br>
+                    Танцювала у Краматорському ансамблі естрадного та спортивного танцю "Деліс" (2017-2022). Отримала всі необхідні сценічні навички. Продовжила кар'єру у Львові в ансамблі "Ритми часу". Також готувала дітей до танцювальних конкурсів (вересень 2023 – червень 2024).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
